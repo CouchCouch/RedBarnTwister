@@ -1,17 +1,16 @@
 const limbs = ['Right Arm', 'Left Arm', 'Right Leg', 'Left Leg'];
-const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Black', 'White', 'Pink', 'Brown'];
 
-const wheel = document.getElementById("wheel");
-const spinBtn = document.getElementById("spin-btn");
-const finalValue = document.getElementById("final-value");
+const wheel = document.getElementById("limb-wheel");
+const spinBtn = document.getElementById("limb-spin-btn");
+const finalValue = document.getElementById("limb-final-value");
 
 //Object that stores values of minimum and maximum angle for a value
 const rotationValues = [
-  {minDegree: 0, maxDegree: 45, value: 'Left Arm'},
-  {minDegree: 46, maxDegree: 135, value: 'Right Arm'},
-  {minDegree: 136, maxDegree: 225, value: 'Left Leg'},
-  {minDegree: 226, maxDegree: 315, value: 'Right Leg'},
-  {minDegree: 316, maxDegree: 360, value: 'Left Arm'}
+  //{minDegree: 0, maxDegree: 45, value: 'Left Arm'},
+  {minDegree: 1, maxDegree: 90, value: 'Right Arm'},
+  {minDegree: 91, maxDegree: 180, value: 'Left Leg'},
+  {minDegree: 181, maxDegree: 270, value: 'Right Leg'},
+  {minDegree: 271, maxDegree: 360, value: 'Left Arm'}
 ];
 
 //Size of each piece
@@ -66,7 +65,8 @@ const valueGenerator = (angleValue) => {
   for (let i of rotationValues) {
     //if the angleValue is between min and max then display it
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      finalValue.innerHTML = `<p>Value: ${i.value}</p>`;
+      finalValue.innerHTML = `<p>Limb: ${i.value}</p>`;
+      console.log(angleValue + ': ' + i.value);
       spinBtn.disabled = false;
       break;
     }

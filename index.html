@@ -14,12 +14,23 @@
 </head>
 <body>
     <div class="wrapper">
+      <div class="limb">
         <div class="container">
-          <canvas id="wheel"></canvas>
-          <button id="spin-btn">Spin</button>
+          <canvas class="wheel" id="limb-wheel"></canvas>
+          <button class="spin-btn" id="limb-spin-btn">Spin</button>
           <img src="./images/arrow.svg" alt="arrow" id="arrow" />
         </div>
-        <div id="final-value">
+        <div class="final-value" id="limb-final-value">
+          <p>Click On The Spin Button To Start</p>
+        </div>
+      </div>
+      <div class="color">
+        <div class="container">
+          <canvas class="wheel" id="color-wheel"></canvas>
+          <button class="spin-btn" id="color-spin-btn">Spin</button>
+          <img src="./images/arrow.svg" alt="arrow" id="arrow" />
+        </div>
+        <div class="final-value" id="color-final-value">
           <p>Click On The Spin Button To Start</p>
         </div>
       </div>
@@ -28,7 +39,8 @@
       <!-- Chart JS Plugin for displaying text over chart -->
       <script src="./scripts/chartjs-plugin-datalabels.min.js"></script>
       <!-- Script -->
-      <script src="./scripts/script.js"></script>
+      <script src="./scripts/limb.js"></script>
+      <script src="./scripts/color.js"></script>
     </div>
 </body>
 </html>     
